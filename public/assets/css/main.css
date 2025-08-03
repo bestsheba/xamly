@@ -97,6 +97,9 @@ h6 {
     font-family: var(--heading-font);
 }
 
+.bgprimary {
+    background: var(--accent-color);
+}
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
@@ -214,7 +217,7 @@ h6 {
 
     .navmenu a,
     .navmenu a:focus {
-        color: var(--nav-hover-color);
+        color: white;
         padding: 18px 15px;
         font-size: 16px;
         font-family: var(--nav-font);
@@ -241,7 +244,7 @@ h6 {
     .navmenu li:hover > a,
     .navmenu .active,
     .navmenu .active:focus {
-        color: var(--nav-hover-color);
+        color: white;
     }
 
     .navmenu .dropdown ul {

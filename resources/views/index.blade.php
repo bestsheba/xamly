@@ -1,97 +1,65 @@
 @extends('layouts.guest')
 @section('content')
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <section class="p-0" style="margin-top: 91px;">
+        <div class="container">
+            <div class="row g-0">
+                <div class="col-12">
+                    <img src="banner.jpg" alt="Hero Banner" class="img-fluid w-100 hero-banner">
+                </div>
+            </div>
+            <h1 class="hero-title">
+                এডমিশন এক্সাম এর পূর্ণাঙ্গ প্রস্তুতি হোক
+                <span class="brand-highlight">Xamly</span> তার সাথে
+            </h1>
+            <p class="text-center">এটা সাধারণ কোনো এক্সাম ব্যাচ নয়। এটা এমন একটি ব্যাচ যেটা তোমাকে সম্পূর্ণরূপে প্রস্তুত
+                করবে মেডিকেল ও ভার্সিটি ভর্তি পরীক্ষার জন্য।</p>
+        </div>
+    </section>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="300">
+                <h2 class="fw-bold">কেন <span class="text-primary">Xamly</span> সেরা?</h2>
+            </div>
 
-        <div class="hero-container">
-            <video autoplay="" muted="" loop="" playsinline="" class="video-background">
-                <source src="assets/img/education/video-2.mp4" type="video/mp4">
-            </video>
-            <div class="overlay"></div>
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-7" data-aos="zoom-out" data-aos-delay="100">
-                        <div class="hero-content">
-                            <h1>এক্সাম দিন, জ্ঞান বাড়ান </br>Xamly আপনার শিক্ষার সঙ্গী</h1>
-                            <p>Xamly এমন একটি অনলাইন পরীক্ষার প্ল্যাটফর্ম যেখানে ছাত্র-ছাত্রীরা যেকোনো সময়, যেকোনো
-                                জায়গা থেকে বিভিন্ন বিষয়ের উপর অধ্যায়ভিত্তিক এক্সাম দিতে পারে। মক টেস্ট, সময়নির্ধারিত
-                                পরীক্ষা এবং ফলাফল বিশ্লেষণের মাধ্যমে শিক্ষার্থীরা নিজের দুর্বলতা খুঁজে পেয়ে সহজেই
-                                উন্নতি করতে পারে। সৃজনশীল প্রশ্ন, সুন্দর ইন্টারফেস ও স্বচ্ছ রেজাল্ট সিস্টেমের
-                                মাধ্যমে Xamly হয়ে উঠুক আপনার নিয়মিত পড়াশোনার অংশ।</p>
-                            <div class="cta-buttons">
-                                <a href="#" class="btn-primary">Start Your Journey</a>
-                                <a href="#" class="btn-secondary">Discover Programs</a>
-                            </div>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" data-aos="fade-up" data-aos-delay="500">
+                <!-- Card 1 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <div class="mb-3 text-primary fs-1">
+                            <i class="bi bi-book"></i>
                         </div>
+                        <a href="#" class="btn bgprimary text-white btn-sm mb-3">সেরা গাইডলাইন</a>
+                        <p class="text-muted mb-0">এডমিশনে কিভাবে এগোতে হবে তার পূর্ণাঙ্গ রোড ম্যাপ</p>
                     </div>
-                    <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
-                        <div class="stats-card">
-                            <div class="stats-header">
-                                <h3>Why Choose Us</h3>
-                                <div class="decoration-line"></div>
-                            </div>
-                            <div class="stats-grid">
-                                <div class="stat-item">
-                                    <div class="stat-icon">
-                                        <i class="bi bi-trophy-fill"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <h4>95%</h4>
-                                        <p>শিক্ষার্থীর ফলাফল উন্নতি</p>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-icon">
-                                        <i class="bi bi-globe"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <h4>30+</h4>
-                                        <p>শিক্ষা প্রতিষ্ঠান ও কোচিং পার্টনার</p>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-icon">
-                                        <i class="bi bi-mortarboard"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <h4>20:1</h4>
-                                        <p>শিক্ষক-শিক্ষার্থী সহায়তা অনুপাত</p>
-                                    </div>
-                                </div>
-                                <div class="stat-item">
-                                    <div class="stat-icon">
-                                        <i class="bi bi-building"></i>
-                                    </div>
-                                    <div class="stat-content">
-                                        <h4>50+</h4>
-                                        <p>বিষয়ের উপর অধ্যায়ভিত্তিক এক্সাম</p>
-                                    </div>
-                                </div>
-                            </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <div class="mb-3 text-primary fs-1">
+                            <i class="bi bi-lightbulb"></i>
                         </div>
+                        <a href="#" class="btn bgprimary text-white btn-sm mb-3">স্ট্যান্ডার্ড এক্সাম</a>
+                        <p class="text-muted mb-0">সম্পূর্ণ এডমিশন স্ট্যান্ডার্ড এক্সামের সুযোগ</p>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                        <div class="mb-3 text-primary fs-1">
+                            <i class="bi bi-globe"></i>
+                        </div>
+                        <a href="#" class="btn bgprimary text-white btn-sm mb-3">ইউনিক ফিচারস</a>
+                        <p class="text-muted mb-0">যেটা তোমাকে এগিয়ে রাখবে বাকিদের থেকে
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="event-ticker">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-12 ticker-item">
-                        <span class="title">
-                            <h1 class="text-center">Welcome to the Admission Exam Centre</h1>
-                        </span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-
-    </section><!-- /Hero Section -->
-
+    </section>
     <!-- About Section -->
     <section id="about" class="about section">
-
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
             <div class="row mb-5">
@@ -215,7 +183,7 @@
                 <div class="row g-4 isotope-container">
                     <div class="col-lg-6 isotope-item মেডিকেল" data-aos="zoom-in" data-aos-delay="100">
                         <div class="program-item">
-                            <div class="program-badge">Bachelor's Degree</div>
+                            <div class="program-badge">Exam Batch </div>
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="program-image-wrapper">
@@ -233,8 +201,12 @@
                                         </div>
                                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus,
                                             luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-                                        <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                class="bi bi-arrow-right"></i></a>
+                                        <div class="d-flex justify-content-between"> <a href="#"
+                                                class="program-btn"><span>বিস্তারিত</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                            <a href="#" class="program-btn"><span>ইনরোল প্রসেস</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -243,7 +215,7 @@
 
                     <div class="col-lg-6 isotope-item filter-bachelor" data-aos="zoom-in" data-aos-delay="200">
                         <div class="program-item">
-                            <div class="program-badge">Bachelor's Degree</div>
+                            <div class="program-badge">Exam Batch </div>
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="program-image-wrapper">
@@ -261,8 +233,12 @@
                                         </div>
                                         <p>Nullam sed augue a turpis bibendum cursus. Suspendisse potenti. Praesent
                                             mi diam, feugiat a tincidunt at.</p>
-                                        <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                class="bi bi-arrow-right"></i></a>
+                                        <div class="d-flex justify-content-between"> <a href="#"
+                                                class="program-btn"><span>বিস্তারিত</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                            <a href="#" class="program-btn"><span>ইনরোল প্রসেস</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -271,7 +247,7 @@
 
                     <div class="col-lg-6 isotope-item filter-bachelor" data-aos="zoom-in" data-aos-delay="300">
                         <div class="program-item">
-                            <div class="program-badge">Bachelor's Degree</div>
+                            <div class="program-badge">Exam Batch </div>
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="program-image-wrapper">
@@ -281,7 +257,7 @@
                                 </div>
                                 <div class="col-md-8">
                                     <div class="program-content">
-                                        <h3>Medical Sciences</h3>
+                                        <h3>মেডিকেল অপ্রতিরোধ্য এক্সাম ব্যাচ</h3>
                                         <div class="program-highlights">
                                             <span><i class="bi bi-clock"></i> 5 Years</span>
                                             <span><i class="bi bi-people-fill"></i> 150 Credits</span>
@@ -289,8 +265,12 @@
                                         </div>
                                         <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
                                             cubilia curae.</p>
-                                        <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                class="bi bi-arrow-right"></i></a>
+                                        <div class="d-flex justify-content-between"> <a href="#"
+                                                class="program-btn"><span>বিস্তারিত</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                            <a href="#" class="program-btn"><span>ইনরোল প্রসেস</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -299,7 +279,7 @@
 
                     <div class="col-lg-6 isotope-item filter-master" data-aos="zoom-in" data-aos-delay="100">
                         <div class="program-item">
-                            <div class="program-badge">Master's Degree</div>
+                            <div class="program-badge">Exam Batch </div>
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="program-image-wrapper">
@@ -317,8 +297,12 @@
                                         </div>
                                         <p>Aenean imperdiet, erat vel consequat mollis, nunc risus aliquam nunc,
                                             eget condimentum urna dui et metus.</p>
-                                        <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                class="bi bi-arrow-right"></i></a>
+                                        <div class="d-flex justify-content-between"> <a href="#"
+                                                class="program-btn"><span>বিস্তারিত</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                            <a href="#" class="program-btn"><span>ইনরোল প্রসেস</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -345,8 +329,12 @@
                                         </div>
                                         <p>Praesent tincidunt, massa et porttitor imperdiet, lorem ex ultricies
                                             ipsum, a tempus metus eros non tortor.</p>
-                                        <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                class="bi bi-arrow-right"></i></a>
+                                        <div class="d-flex justify-content-between"> <a href="#"
+                                                class="program-btn"><span>বিস্তারিত</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                            <a href="#" class="program-btn"><span>ইনরোল প্রসেস</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -373,61 +361,110 @@
                                         </div>
                                         <p>Mauris sed erat in mi vestibulum commodo. Donec a purus at justo
                                             facilisis imperdiet tnteger pell</p>
-                                        <a href="#" class="program-btn"><span>Learn More</span> <i
-                                                class="bi bi-arrow-right"></i></a>
+                                        <div class="d-flex justify-content-between"> <a href="#"
+                                                class="program-btn"><span>বিস্তারিত</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                            <a href="#" class="program-btn"><span>ইনরোল প্রসেস</span> <i
+                                                    class="bi bi-arrow-right"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div><!-- End Program Item -->
-
                 </div>
             </div>
-
         </div>
-
     </section><!-- /Featured Programs Section -->
     <section class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-center mb-4">What Our Clients Say</h2>
+            <h2 class="text-center mb-5 fw-bold">শিক্ষার্থী রিভিউ</h2>
 
             <div class="swiper" id="testimonialSwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="card h-100 p-3">
-                            <p>"Amazing service and support!"</p>
-                            <h5 class="mt-3">— John Doe</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card h-100 p-3">
-                            <p>"Amazing service and support!"</p>
-                            <h5 class="mt-3">— John Doe</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card h-100 p-3">
-                            <p>"Amazing service and support!"</p>
-                            <h5 class="mt-3">— John Doe</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card h-100 p-3">
-                            <p>"Amazing service and support!"</p>
-                            <h5 class="mt-3">— John Doe</h5>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card h-100 p-3">
-                            <p>"Amazing service and support!"</p>
-                            <h5 class="mt-3">— John Doe</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
 
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm h-100 p-4 text-center">
+                            <p class="fst-italic">"Xamly আমার প্রস্তুতিকে অনেক সহজ করে দিয়েছে। কুইজ ও বিশ্লেষণগুলো দারুণ
+                                সহায়ক।"</p>
+                            <h5 class="mt-3 mb-0 fw-semibold">— তানজিমা আক্তার</h5>
+                            <small class="text-muted">ঢাকা বিশ্ববিদ্যালয়</small>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm h-100 p-4 text-center">
+                            <p class="fst-italic">"গ্রামের ছাত্র হয়েও আমি সমান সুযোগ পেয়েছি। Xamly সত্যিই অসাধারণ।"</p>
+                            <h5 class="mt-3 mb-0 fw-semibold">— রিফাতুল ইসলাম</h5>
+                            <small class="text-muted">চট্টগ্রাম বিশ্ববিদ্যালয়</small>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm h-100 p-4 text-center">
+                            <p class="fst-italic">"প্রশ্নব্যাংক আর রিপোর্টিং সিস্টেম খুব কার্যকর। সময় বাঁচিয়ে দিয়েছে।"</p>
+                            <h5 class="mt-3 mb-0 fw-semibold">— সুমাইয়া হাসান</h5>
+                            <small class="text-muted">রুয়েট</small>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm h-100 p-4 text-center">
+                            <p class="fst-italic">"প্রশ্নব্যাংক আর রিপোর্টিং সিস্টেম খুব কার্যকর। সময় বাঁচিয়ে দিয়েছে।"</p>
+                            <h5 class="mt-3 mb-0 fw-semibold">— সুমাইয়া হাসান</h5>
+                            <small class="text-muted">রুয়েট</small>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm h-100 p-4 text-center">
+                            <p class="fst-italic">"প্রশ্নব্যাংক আর রিপোর্টিং সিস্টেম খুব কার্যকর। সময় বাঁচিয়ে দিয়েছে।"</p>
+                            <h5 class="mt-3 mb-0 fw-semibold">— সুমাইয়া হাসান</h5>
+                            <small class="text-muted">রুয়েট</small>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="card shadow-sm h-100 p-4 text-center">
+                            <p class="fst-italic">"প্রশ্নব্যাংক আর রিপোর্টিং সিস্টেম খুব কার্যকর। সময় বাঁচিয়ে দিয়েছে।"</p>
+                            <h5 class="mt-3 mb-0 fw-semibold">— সুমাইয়া হাসান</h5>
+                            <small class="text-muted">রুয়েট</small>
+                        </div>
+                    </div>
+
+                    <!-- You can add more slides as needed -->
+                </div>
+
+                <!-- Swiper Pagination & Arrows -->
+                <div class="swiper-pagination mt-4"></div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
+    <section class="py-5 bgprimary text-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">আমাদের সফলতা</h2>
+                <p class="text-light">শিক্ষার্থীদের অর্জনের কিছু সংখ্যা</p>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <h1 class="fw-bold text-white">১০,০০০+</h1>
+                    <p>সন্তুষ্ট শিক্ষার্থী</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h1 class="fw-bold text-white">৮৫%</h1>
+                    <p>প্রবেশিকা পরীক্ষায় সফলতা</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h1 class="fw-bold text-white">৫০০+</h1>
+                    <p>লাইভ সেশন</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h1 class="fw-bold text-white">৯৭%</h1>
+                    <p>পজিটিভ রেটিং</p>
+                </div>
             </div>
         </div>
     </section>

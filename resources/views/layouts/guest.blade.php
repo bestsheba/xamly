@@ -29,6 +29,20 @@
     <!-- Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
     <style>
+        .hero-banner {
+            width: 100%;
+            display: block;
+        }
+
+        /* Optional: Add max-height to prevent image from being too large on very wide screens */
+        @media (min-width: 1200px) {
+            .hero-banner {
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    </style>
+    <style>
         .card-glass {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px);
@@ -70,16 +84,69 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
         }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .primar {
+            background: var(--accent-color);
+        }
+
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        .brand-highlight {
+            color: #ffd700 !important;
+            -webkit-text-fill-color: #ffd700 !important;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+            }
+
+            to {
+                text-shadow: 0 0 30px rgba(255, 215, 0, 0.9);
+            }
+        }
     </style>
 </head>
 
 <body class="index-page">
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
+    <header id="header" class="header d-flex align-items-center fixed-top" style="background: black;">
         <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
             <a href="{{ route('home') }}" class="logo d-flex align-items-center">
-                <img src="/xlogo.jpg" alt="Xamly Logo">
+                <img src="logo.png" alt="Xamly Logo">
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -101,7 +168,7 @@
                         </ul>
                     </li> --}}
                 </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                <i class="mobile-nav-toggle d-xl-none bi bi-list" style="color: white"></i>
             </nav>
 
         </div>
