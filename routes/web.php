@@ -11,6 +11,7 @@ Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about');
 Route::get('/events', [HomeController::class, 'events'])->name('events');
+Route::get('/join-telegram', [HomeController::class, 'joinTelegram'])->name('joinTelegram');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

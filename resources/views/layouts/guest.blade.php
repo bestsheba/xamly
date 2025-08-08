@@ -86,7 +86,7 @@
         }
 
         .hero-title {
-            font-size: 3.5rem;
+            font-size: 2rem;
             font-weight: 800;
             line-height: 1.2;
             margin-top: 15px;
@@ -153,8 +153,8 @@
                 <ul>
                     <li><a href="{{ route('home') }}" class="active">Home</a></li>
                     <li><a href="{{ route('about') }}">About</a></li>
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
-                    {{-- <li><a href="about.html">Students Life</a></li> --}}
+                    <li><a href="{{ route('joinTelegram') }}">Contact</a></li>
+                    <li><a href="{{ route('joinTelegram') }}">Join Telegram</a></li>
                     {{-- <li><a href="{{ route('events') }}">Events</a></li> --}}
                     {{-- <li class="dropdown"><a href="#"><span>More Pages</span> <i
                                 class="bi bi-chevron-down toggle-dropdown"></i></a>
@@ -179,10 +179,10 @@
     </main>
     <footer id="footer" class="footer position-relative">
         <div class="container footer-top">
-            <div class="row gy-4">
+            <div class="row">
                 <div class="col-lg-4 col-md-6 footer-about">
                     <a href="index.html" class="logo d-flex align-items-center">
-                        <img src="/xlogo.jpg" alt="" srcset="">
+                        <img src="logo.png" class="bg-black px-4 py-1" alt="Xamly Logo">
                     </a>
                     <p>Xamly is a trusted platform for admission test preparation in Bangladesh. We offer
                         online mock exams, performance analysis, and personalized preparation tools for Medical,
@@ -192,8 +192,8 @@
                     <div>
                         <ul class="list-unstyled">
                             <li><strong>Address:</strong> 123 Main Street, Dhaka, Bangladesh</li>
-                            <li><strong>Phone:</strong> <a href="tel:+8801650235997">+880 123 456 7890</a></li>
-                            <li><strong>Email:</strong> <a href="mailto:xamly@gmail.com">xamly@gmail.com</a></li>
+                            <li><strong>Phone:</strong> <a style="color: white" href="tel:+8801650235997">+880 123 456 7890</a></li>
+                            <li><strong>Email:</strong> <a style="color: white" href="mailto:xamly@gmail.com">xamly@gmail.com</a></li>
                             <li><strong>Hours:</strong> Sat - Thu: 9:00 AM - 6:00 PM</li>
                         </ul>
                     </div>
@@ -224,7 +224,7 @@
 
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Social Links</h4>
-                    <div class="social-links d-flex">
+                    <div class="social-links d-flex justify-content-center justify-content-md-start">
                         <a href=""><i class="bi bi-twitter-x"></i></a>
                         <a href=""><i class="bi bi-facebook"></i></a>
                         <a href=""><i class="bi bi-instagram"></i></a>
@@ -234,11 +234,11 @@
             </div>
         </div>
 
-        <div class="container copyright text-center mt-4">
+        <div class="container copyright text-center">
             <p>© <span>Copyright</span> <strong class="px-1 sitename">Xamly</strong> <span>All Rights
                     Reserved</span></p>
             <div class="credits">
-                Developed by <a href="https://bestsheba.com">Bestsheba</a>
+                Developed by <a style="color: white" href="https://bestsheba.com">Best sheba</a>
             </div>
         </div>
 

@@ -28,4 +28,8 @@ class HomeController extends Controller
     {
         return view('events');
     }
+    public function joinTelegram()
+    {
+        return view('join-telegram');
+    }
 }

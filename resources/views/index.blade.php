@@ -15,18 +15,18 @@
                 করবে মেডিকেল ও ভার্সিটি ভর্তি পরীক্ষার জন্য।</p>
         </div>
     </section>
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
             <div class="text-center mb-5" data-aos="fade-up" data-aos-delay="300">
                 <h2 class="fw-bold">কেন <span class="text-primary">Xamly</span> সেরা?</h2>
             </div>
 
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="row row-cols-lg-3 g-4" data-aos="fade-up" data-aos-delay="500">
                 <!-- Card 1 -->
                 <div class="col">
-                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                    <div class="card shadow-sm border-0 text-center p-1 p-sm-4 p-md-5 p-lg-4 p-xl-4">
                         <div class="mb-3 text-primary fs-1">
-                            <i class="bi bi-book"></i>
+                            <img src="expert/guide.png" class="w-25" alt="" srcset="">
                         </div>
                         <a href="#" class="btn bgprimary text-white btn-sm mb-3">সেরা গাইডলাইন</a>
                         <p class="text-muted mb-0">এডমিশনে কিভাবে এগোতে হবে তার পূর্ণাঙ্গ রোড ম্যাপ</p>
@@ -35,9 +35,9 @@
 
                 <!-- Card 2 -->
                 <div class="col">
-                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                    <div class="card shadow-sm border-0 text-center p-1 p-sm-4 p-md-5 p-lg-4 p-xl-4">
                         <div class="mb-3 text-primary fs-1">
-                            <i class="bi bi-lightbulb"></i>
+                            <img src="expert/exam.png" class="w-25" alt="" srcset="">
                         </div>
                         <a href="#" class="btn bgprimary text-white btn-sm mb-3">স্ট্যান্ডার্ড এক্সাম</a>
                         <p class="text-muted mb-0">সম্পূর্ণ এডমিশন স্ট্যান্ডার্ড এক্সামের সুযোগ</p>
@@ -46,9 +46,9 @@
 
                 <!-- Card 3 -->
                 <div class="col">
-                    <div class="card h-100 shadow-sm border-0 text-center p-4">
+                    <div class="card shadow-sm border-0 text-center p-1 p-sm-4 p-md-5 p-lg-4 p-xl-4">
                         <div class="mb-3 text-primary fs-1">
-                            <i class="bi bi-globe"></i>
+                            <img src="expert/feature.png" class="w-25" alt="" srcset="">
                         </div>
                         <a href="#" class="btn bgprimary text-white btn-sm mb-3">ইউনিক ফিচারস</a>
                         <p class="text-muted mb-0">যেটা তোমাকে এগিয়ে রাখবে বাকিদের থেকে
@@ -56,110 +56,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="row mb-5">
-                <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
-                    <h2 class="display-6 fw-bold mb-4">এক্সাম দিন, জ্ঞান বাড়ান <span>Xamly আপনার শিক্ষার
-                            সঙ্গী</span></h2>
-                    <p class="lead mb-4">মেধার বিকাশ, ভবিষ্যতের গঠন – Xamly-এর অঙ্গীকার
-                        ছাত্র-ছাত্রীদের একাডেমিক সাফল্যের জন্য তৈরি করা হয়েছে Xamly – একটি আধুনিক ও কার্যকর অনলাইন
-                        এক্সাম প্ল্যাটফর্ম। সময়োপযোগী প্রশ্ন, অধ্যায়ভিত্তিক মূল্যায়ন এবং বিশ্লেষণভিত্তিক ফলাফল
-                        আপনাকে এগিয়ে রাখবে প্রতিযোগিতামূলক পরীক্ষায়।
-
-                        📊 পরিসংখ্যান (যেগুলো আপনি আপনার প্রকৃত বা লক্ষ্যমাত্রা অনুযায়ী দিতে পারেন):
-                    </p>
-                    <div class="d-flex flex-wrap gap-4 mb-4">
-                        <div class="stat-box">
-                            <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="3"
-                                    data-purecounter-duration="1" class="purecounter"></span>+</span>
-                            <span class="stat-label">Years</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="5000"
-                                    data-purecounter-duration="1" class="purecounter"></span>+</span>
-                            <span class="stat-label">Students</span>
-                        </div>
-                        <div class="stat-box">
-                            <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="200"
-                                    data-purecounter-duration="1" class="purecounter"></span>+</span>
-                            <span class="stat-label">Faculty</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
-                    <div class="image-stack">
-                        <div class="image-stack-item image-stack-item-top" data-aos="zoom-in" data-aos-delay="400">
-                            <img src="assets/img/education/campus-4.webp" alt="Campus Life"
-                                class="img-fluid rounded-4 shadow-lg">
-                        </div>
-                        <div class="image-stack-item image-stack-item-bottom" data-aos="zoom-in" data-aos-delay="500">
-                            <img src="assets/img/education/students-2.webp" alt="Students"
-                                class="img-fluid rounded-4 shadow-lg">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row mission-vision-row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="value-card h-100">
-                        <div class="card-icon">
-                            <i class="bi bi-rocket-takeoff"></i>
-                        </div>
-                        <h3>আমাদের লক্ষ্য (Our Mission)</h3>
-                        <p>দেশের শিক্ষার্থীদের জন্য একটি কার্যকর, সহজলভ্য এবং আধুনিক অনলাইন পরীক্ষার প্ল্যাটফর্ম
-                            তৈরি করা, যেখানে নিয়মিত মূল্যায়নের মাধ্যমে মেধা ও দক্ষতা বৃদ্ধি পায়।</p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="value-card h-100">
-                        <div class="card-icon">
-                            <i class="bi bi-eye"></i>
-                        </div>
-                        <h3>আমাদের দৃষ্টি (Our Vision)</h3>
-                        <p>Xamly হয়ে উঠবে বাংলাদেশের সবচেয়ে নির্ভরযোগ্য অনলাইন এক্সাম প্ল্যাটফর্ম — যেখানে প্রতিটি
-                            শিক্ষার্থী নিজের শিক্ষাজীবনে সাফল্যের সিঁড়ি তৈরি করতে পারবে।
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="value-card h-100">
-                        <div class="card-icon">
-                            <i class="bi bi-star"></i>
-                        </div>
-                        <h3>আমাদের মূল্যবোধ (Our Values)</h3>
-                        <p>স্বচ্ছতা ও ন্যায্যতা, মানসম্পন্ন কনটেন্ট, প্রযুক্তিনির্ভর শিক্ষা, শিক্ষার্থীবান্ধব সেবা,
-                            সময়ানুবর্তিতা ও দায়িত্বশীলতা</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </section><!-- /About Section -->
-    <section>
-        <div class="container section-title" data-aos="fade-up">
-            <h2>Join Telegram</h2>
-            <div class="button-grid">
-                <a href="https://t.me/practice" class="custom-btn" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-pencil-alt"></i> প্র্যাকটিস
-                </a>
-                <a href="https://t.me/exam" class="custom-btn" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-file-alt"></i> এক্সাম
-                </a>
-                <a href="https://t.me/notes" class="custom-btn" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-book"></i> নোটস
-                </a>
-                <a href="https://t.me/guideline" class="custom-btn" data-aos="fade-up" data-aos-delay="400">
-                    <i class="fas fa-compass"></i> গাইডলাইন
-                </a>
-            </div>
-        </div>
         </div>
     </section>
     <!-- Featured Programs Section -->
@@ -187,8 +83,7 @@
                             <div class="row g-0">
                                 <div class="col-md-4">
                                     <div class="program-image-wrapper">
-                                        <img src="assets/img/education/education-1.webp" class="img-fluid"
-                                            alt="Program">
+                                        <img src="assets/img/education/education-1.webp" class="img-fluid" alt="Program">
                                     </div>
                                 </div>
                                 <div class="col-md-8">

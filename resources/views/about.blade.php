@@ -4,8 +4,8 @@
         <div class="container position-relative">
             <h1>About</h1>
             <p>প্রতিযোগিতামূলক পরীক্ষায় সফলতার জন্য সঠিক দিকনির্দেশনা ও গাইডলাইনের প্রয়োজন হয়, আর Xamly সেই
-                            পথের একটি
-                            নির্ভরযোগ্য সঙ্গী।</p>
+                পথের একটি
+                নির্ভরযোগ্য সঙ্গী।</p>
             <nav class="breadcrumbs">
                 <ol>
                     <li><a href="index.html">Home</a></li>
@@ -97,6 +97,90 @@
             </div>
         </div>
     </section>
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="row mb-5">
+                <div class="col-lg-6 pe-lg-5" data-aos="fade-right" data-aos-delay="200">
+                    <h2 class="display-6 fw-bold mb-4">এক্সাম দিন, জ্ঞান বাড়ান <span>Xamly আপনার শিক্ষার
+                            সঙ্গী</span></h2>
+                    <p class="lead mb-4">মেধার বিকাশ, ভবিষ্যতের গঠন – Xamly-এর অঙ্গীকার
+                        ছাত্র-ছাত্রীদের একাডেমিক সাফল্যের জন্য তৈরি করা হয়েছে Xamly – একটি আধুনিক ও কার্যকর অনলাইন
+                        এক্সাম প্ল্যাটফর্ম। সময়োপযোগী প্রশ্ন, অধ্যায়ভিত্তিক মূল্যায়ন এবং বিশ্লেষণভিত্তিক ফলাফল
+                        আপনাকে এগিয়ে রাখবে প্রতিযোগিতামূলক পরীক্ষায়।
+
+                        📊 পরিসংখ্যান (যেগুলো আপনি আপনার প্রকৃত বা লক্ষ্যমাত্রা অনুযায়ী দিতে পারেন):
+                    </p>
+                    <div class="d-flex flex-wrap gap-4 mb-4">
+                        <div class="stat-box">
+                            <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="3"
+                                    data-purecounter-duration="1" class="purecounter"></span>+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="5000"
+                                    data-purecounter-duration="1" class="purecounter"></span>+</span>
+                            <span class="stat-label">Students</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-number"><span data-purecounter-start="0" data-purecounter-end="200"
+                                    data-purecounter-duration="1" class="purecounter"></span>+</span>
+                            <span class="stat-label">Faculty</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
+                    <div class="image-stack">
+                        <div class="image-stack-item image-stack-item-top" data-aos="zoom-in" data-aos-delay="400">
+                            <img src="assets/img/education/campus-4.webp" alt="Campus Life"
+                                class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                        <div class="image-stack-item image-stack-item-bottom" data-aos="zoom-in" data-aos-delay="500">
+                            <img src="assets/img/education/students-2.webp" alt="Students"
+                                class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mission-vision-row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-card h-100">
+                        <div class="card-icon">
+                            <i class="bi bi-rocket-takeoff"></i>
+                        </div>
+                        <h3>আমাদের লক্ষ্য (Our Mission)</h3>
+                        <p>দেশের শিক্ষার্থীদের জন্য একটি কার্যকর, সহজলভ্য এবং আধুনিক অনলাইন পরীক্ষার প্ল্যাটফর্ম
+                            তৈরি করা, যেখানে নিয়মিত মূল্যায়নের মাধ্যমে মেধা ও দক্ষতা বৃদ্ধি পায়।</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-card h-100">
+                        <div class="card-icon">
+                            <i class="bi bi-eye"></i>
+                        </div>
+                        <h3>আমাদের দৃষ্টি (Our Vision)</h3>
+                        <p>Xamly হয়ে উঠবে বাংলাদেশের সবচেয়ে নির্ভরযোগ্য অনলাইন এক্সাম প্ল্যাটফর্ম — যেখানে প্রতিটি
+                            শিক্ষার্থী নিজের শিক্ষাজীবনে সাফল্যের সিঁড়ি তৈরি করতে পারবে।
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-card h-100">
+                        <div class="card-icon">
+                            <i class="bi bi-star"></i>
+                        </div>
+                        <h3>আমাদের মূল্যবোধ (Our Values)</h3>
+                        <p>স্বচ্ছতা ও ন্যায্যতা, মানসম্পন্ন কনটেন্ট, প্রযুক্তিনির্ভর শিক্ষা, শিক্ষার্থীবান্ধব সেবা,
+                            সময়ানুবর্তিতা ও দায়িত্বশীলতা</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section><!-- /About Section -->
     <!-- Leadership Section -->
     <section id="leadership" class="leadership section">
 
@@ -137,7 +221,8 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="300">
                     <div class="about-image">
-                        <img src="assets/img/education/teacher-1.webp" alt="Our Leadership Team" class="img-fluid rounded">
+                        <img src="assets/img/education/teacher-1.webp" alt="Our Leadership Team"
+                            class="img-fluid rounded">
                     </div>
                 </div>
             </div>
