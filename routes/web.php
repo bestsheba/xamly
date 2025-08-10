@@ -1,30 +1,41 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\MgCategoryController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\QuoteRequestController;
+use App\Http\Controllers\TGalleryController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about');
-Route::get('/events', [HomeController::class, 'events'])->name('events');
-Route::get('/join-telegram', [HomeController::class, 'joinTelegram'])->name('joinTelegram');
+
+// Load more images route
+Route::get('/load-more-images', [ImageController::class, 'loadMore'])->name('load.more.images');
+Route::get('/tgalleries/load-more', [TGalleryController::class, 'loadMore'])->name('load.more.tgalleries');
 
 Route::middleware('auth')->group(function () {
+    Route::group([
+        'prefix' => 'admin',
+        'as' => 'admin.',
+    ], function () {
+        Route::resource('mgCategories', MgCategoryController::class);
+        Route::resource('images', ImageController::class);
+        Route::resource('tgalleries', TGalleryController::class);
+        Route::patch('/images/{image}/toggle-status', [ImageController::class, 'toggleStatus'])->name('images.toggle-status');
+        Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
+    });
+    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    Route::get('/admin/quote-requests', [QuoteRequestController::class, 'index'])->name('admin.quote.index');
 });
-Route::get('/quote-request', [QuoteRequestController::class, 'create'])->name('quote.form');
-Route::post('/quote-request', [QuoteRequestController::class, 'store'])->name('quote.submit');
 
 // Optional: for admin or thank-you page
 require __DIR__ . '/auth.php';
-Route::prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
-});
-Route::patch('/admin/quotes/{quote}/status', [QuoteRequestController::class, 'updateStatus'])->name('quote.updateStatus');
+
+Route::resource('courses', CourseController::class);

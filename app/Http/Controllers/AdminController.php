@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\QuoteRequest;
-use App\Models\Work;
+use App\Models\Image;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function dashboard()
     {
-        $statusCounts = QuoteRequest::select('status', \DB::raw('count(*) as total'))
-            ->groupBy('status')
-            ->pluck('total', 'status');
-        $totalQuotes = QuoteRequest::count();
+        $totalImages = Image::count();
+        $activeImages = Image::count();
+        $recentImages = Image::take(6)->get();
 
-        return view('admin.dashboard', compact('statusCounts', 'totalQuotes'));
+        return view('admin.dashboard', compact('totalImages', 'activeImages', 'recentImages'));
     }
 }

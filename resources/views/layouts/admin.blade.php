@@ -46,14 +46,26 @@
                         <span class="ml-3 transition-opacity duration-300 sidebar-text">Dashboard</span>
                     </div>
                 </a>
-                <a href="{{ route('admin.quote.index') }}"
-                    class="flex items-center px-4 py-3 mb-1 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-blue-700 group {{ request()->routeIs('admin.quote.index') ? 'bg-blue-50 text-blue-700' : '' }}">
+                <a href="{{ route('admin.images.index') }}"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg mt-1 {{ request()->routeIs('admin.images.index') ? 'bg-blue-50 text-blue-700' : '' }}">
                     <div class="flex items-center">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-list-ul" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5m-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2m0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
                         </svg>
-                        <span class="ml-3 transition-opacity duration-300 sidebar-text">Booking List</span>
+                        <span class="transition-opacity duration-300 sidebar-text ml-3">Photo Gallery List</span>
+                    </div>
+                </a>
+                <a href="{{ route('admin.images.create') }}"
+                    class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 rounded-lg {{ request()->routeIs('admin.images.create') ? 'bg-blue-50 text-blue-700' : '' }}">
+                    <div class="flex items-center"> <svg xmlns="http://www.w3.org/2000/svg" width="16"
+                            height="16" fill="currentColor" class="bi bi-plus-square" viewBox="0 0 16 16">
+                            <path
+                                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                            <path
+                                d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4" />
+                        </svg><span class="transition-opacity duration-300 sidebar-text ml-3">Add Gallery</span>
                     </div>
                 </a>
             </nav>
@@ -79,7 +91,8 @@
 
                         <div x-show="isOpen" x-transition
                             class="absolute right-0 mt-3 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
-                            <a href="{{ route('profile.edit') }}" class="flex items-center px-4 py-2 hover:bg-gray-100">
+                            <a href="{{ route('profile.edit') }}"
+                                class="flex items-center px-4 py-2 hover:bg-gray-100">
                                 <i class="mr-3 icon-user"></i>
                                 My Profile
                             </a>
