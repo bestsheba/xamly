@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Image;
+use App\Models\Song;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -12,7 +13,10 @@ class AdminController extends Controller
         $totalImages = Image::count();
         $activeImages = Image::count();
         $recentImages = Image::take(6)->get();
+        
+        $totalSongs = Song::count();
+        $recentSongs = Song::take(6)->get();
 
-        return view('admin.dashboard', compact('totalImages', 'activeImages', 'recentImages'));
+        return view('admin.dashboard', compact('totalImages', 'activeImages', 'recentImages', 'totalSongs', 'recentSongs'));
     }
 }

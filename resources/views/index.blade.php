@@ -299,7 +299,7 @@
         </div>
     </section>
     <!-- About Me Section -->
-    <section id="about" class="py-20 bg-gray-50">
+    <section id="about" class="py-10 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
@@ -356,30 +356,29 @@
         </div>
     </section>
     <!-- Music Gallery Section -->
-    <section id="music" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="music" class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
                 Music Photo Gallery
             </h2>
+
             <!-- Dynamic Images Grid -->
-            <div id="images-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div id="images-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 @forelse($images as $image)
-                    <div class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden"
-                        data-image-id="{{ $image->id }}">
-                        <div class="aspect-video bg-gray-200">
-                            <img src="{{ Storage::url($image->image) }}" alt="Gallery Image"
-                                class="w-full h-full object-cover gallery-trigger" />
-                        </div>
+                    <div class="gallery-item aspect-square bg-white rounded-lg shadow-lg overflow-hidden"
+                        data-country="{{ $image->country }}">
+                        <img src="{{ Storage::url($image->image) }}" alt="{{ $image->alt ?? 'Travel Photo' }}"
+                            class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
                     </div>
                 @empty
                     <div class="col-span-full text-center text-gray-500 py-8">
-                        No images available at the moment.
+                        No travel photos available at the moment.
                     </div>
                 @endforelse
             </div>
 
             <!-- Load More Button -->
-            @if ($images->count() >= 6)
+            @if ($images->count() >= 8)
                 <div class="text-center mt-8">
                     <button id="load-more-btn"
                         class="bg-bangladesh-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
@@ -390,8 +389,8 @@
             @endif
         </div>
     </section>
-    <section id="music" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="songGallery" class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
                 Song Gallery
             </h2>
@@ -441,7 +440,7 @@
         </div>
     </section>
     <!-- Ghurbaz Travel Vlog Section -->
-    <section id="ghurbaz" class="py-20 bg-white">
+    <section id="ghurbaz" class="py-10 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-bangladesh-green mb-4">
@@ -502,51 +501,41 @@
         </div>
     </section>
 
-    <!-- Travel Photo Gallery -->
-    <section id="travel" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="travel" class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
                 Travel Photo Gallery
             </h2>
-            <!-- Photo Grid -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <div class="gallery-item aspect-square" data-country="thailand">
-                    <img src="images/1.JPG" alt="Thailand Temple"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="dubai">
-                    <img src="images/2.JPG" alt="Dubai Skyline"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="malaysia">
-                    <img src="images/3.JPG" alt="Malaysia Culture"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="singapore">
-                    <img src="images/4.JPG" alt="Singapore Marina"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="thailand">
-                    <img src="images/5.JPG" alt="Thailand Beach"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="dubai">
-                    <img src="images/11.JPG" alt="Dubai Desert"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="malaysia">
-                    <img src="images/6.JPG" alt="Malaysia Food"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
-                <div class="gallery-item aspect-square" data-country="singapore">
-                    <img src="images/7.JPG" alt="Singapore Gardens"
-                        class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
-                </div>
+
+            <!-- Dynamic Images Grid -->
+            <div id="travel-images-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                @forelse($travelImages as $image)
+                    <div class="gallery-item aspect-square bg-white rounded-lg shadow-lg overflow-hidden"
+                        data-country="{{ $image->country }}">
+                        <img src="{{ Storage::url($image->image) }}" alt="{{ $image->alt ?? 'Travel Photo' }}"
+                            class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
+                    </div>
+                @empty
+                    <div class="col-span-full text-center text-gray-500 py-8">
+                        No travel photos available at the moment.
+                    </div>
+                @endforelse
             </div>
+
+            <!-- Load More Button -->
+            @if ($travelImages->count() >= 8)
+                <div class="text-center mt-8">
+                    <button id="travel-load-more-btn"
+                        class="bg-bangladesh-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                        data-page="2">
+                        Load More
+                    </button>
+                </div>
+            @endif
         </div>
     </section>
 
-    <section id="news" class="py-20 bg-white">
+    <section id="news" class="py-10 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">News & Press</h2>
 
@@ -578,7 +567,7 @@
             </div>
         </div>
     </section>
-    <section id="blog" class="py-20 bg-gray-50">
+    <section id="blog" class="py-10 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">Blog</h2>
 
@@ -655,7 +644,7 @@
         </div>
     </section>
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-10 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
                 Get In Touch
@@ -1392,6 +1381,92 @@
                     loadMoreBtn.disabled = false;
                 });
         }
+    </script>
+    <script>
+        /**
+         * Song Load More Functionality
+         */
+        function initSongLoadMore() {
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const videosGrid = document.getElementById('videos-grid');
+
+            if (loadMoreBtn && videosGrid) {
+                loadMoreBtn.addEventListener('click', function() {
+                    const currentPage = parseInt(this.getAttribute('data-page'));
+                    const button = this;
+
+                    // Disable button and show loading state
+                    button.disabled = true;
+                    button.textContent = 'Loading...';
+
+                    fetch(`/songs/load-more?page=${currentPage}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.songs && data.songs.length > 0) {
+                                // Add new songs to the grid
+                                data.songs.forEach(song => {
+                                    const videoId = extractVideoId(song.youtube_url);
+                                    if (videoId) {
+                                        const songElement = createSongElement(song, videoId);
+                                        videosGrid.appendChild(songElement);
+                                    }
+                                });
+
+                                // Update button state
+                                if (data.hasMore) {
+                                    button.setAttribute('data-page', data.nextPage);
+                                    button.disabled = false;
+                                    button.textContent = 'Load More';
+                                } else {
+                                    button.style.display = 'none';
+                                }
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error loading more songs:', error);
+                            button.disabled = false;
+                            button.textContent = 'Load More';
+                        });
+                });
+            }
+        }
+
+        /**
+         * Extract YouTube video ID from URL
+         */
+        function extractVideoId(url) {
+            const regex = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+            const match = url.match(regex);
+            return match ? match[1] : null;
+        }
+
+        /**
+         * Create song element for the grid
+         */
+        function createSongElement(song, videoId) {
+            const div = document.createElement('div');
+            div.className = 'gallery-item bg-white rounded-lg shadow-lg overflow-hidden';
+            div.setAttribute('data-video-id', videoId);
+
+            div.innerHTML = `
+      <div class="aspect-video bg-gray-200 relative">
+        <iframe class="w-full h-full absolute inset-0"
+          src="https://www.youtube.com/embed/${videoId}"
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+      <div class="p-4">
+        <h3 class="text-lg font-semibold text-gray-900 mb-2">${song.title}</h3>
+        ${song.description ? `<p class="text-gray-600 text-sm">${song.description.substring(0, 100)}${song.description.length > 100 ? '...' : ''}</p>` : ''}
+      </div>
+    `;
+
+            return div;
+        }
+
+        // Initialize song load more functionality
+        window.addEventListener('load', initSongLoadMore);
     </script>
 </body>
 
