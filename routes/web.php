@@ -1,23 +1,27 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\MgCategoryController;
+use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SongController;
 use App\Http\Controllers\TGalleryController;
+use App\Http\Controllers\TVlogController;
 use Illuminate\Support\Facades\Route;
-
+Route::get('/articles/{article}', [ArticleController::class, 'view'])->name('articles.show');
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/about-us', [HomeController::class, 'about'])->name('about');
-
+       Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 // Load more routes
 Route::get('/load-more-images', [ImageController::class, 'loadMore'])->name('load.more.images');
 Route::get('/songs/load-more', [SongController::class, 'loadMore'])->name('load.more.songs');
+Route::get('/t_vlogs/load-more', [TVlogController::class, 'loadMore'])->name('load.more.t_vlogs');
 Route::get('/tgalleries/load-more', [TGalleryController::class, 'loadMore'])->name('load.more.tgalleries');
 
 Route::middleware('auth')->group(function () {
@@ -27,7 +31,10 @@ Route::middleware('auth')->group(function () {
     ], function () {
         Route::resource('mgCategories', MgCategoryController::class);
         Route::resource('images', ImageController::class);
+        Route::resource('news', NewsController::class);
         Route::resource('songs', SongController::class);
+        Route::resource('t_vlogs', TVlogController::class);
+        Route::resource('articles', ArticleController::class);
         Route::resource('tgalleries', TGalleryController::class);
         Route::patch('/images/{image}/toggle-status', [ImageController::class, 'toggleStatus'])->name('images.toggle-status');
         Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');

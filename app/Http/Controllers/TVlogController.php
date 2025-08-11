@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Song;
+use App\Models\TVlog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class SongController extends Controller
+class TVlogController extends Controller
 {
     public function index()
     {
-        $songs = Song::ordered()->paginate(10);
-        return view('admin.songs.index', compact('songs'));
+        $t_vlogs = TVlog::ordered()->paginate(10);
+        return view('admin.t_vlogs.index', compact('t_vlogs'));
     }
 
     public function create()
     {
-        return view('admin.songs.create');
+        return view('admin.t_vlogs.create');
     }
 
     public function store(Request $request)
@@ -36,19 +36,19 @@ class SongController extends Controller
                 ->withInput();
         }
 
-        Song::create($validator->validated());
+        TVlog::create($validator->validated());
 
-        return redirect()->route('admin.songs.index')
-            ->with('success', 'Song created successfully!');
+        return redirect()->route('admin.t_vlogs.index')
+            ->with('success', 'TVlog created successfully!');
     }
 
 
-    public function edit(Song $song)
+    public function edit(TVlog $tVlog)
     {
-        return view('admin.songs.edit', compact('song'));
+        return view('admin.t_vlogs.edit', compact('tVlog'));
     }
 
-    public function update(Request $request, Song $song)
+    public function update(Request $request, TVlog $song)
     {
         $validator = Validator::make($request->all(), [
             'youtube_url' => [
@@ -67,28 +67,28 @@ class SongController extends Controller
 
         $song->update($request->all());
 
-        return redirect()->route('admin.songs.index')
-            ->with('success', 'Song updated successfully!');
+        return redirect()->route('admin.t_vlogs.index')
+            ->with('success', 'TVlog updated successfully!');
     }
 
-    public function destroy(Song $song)
+    public function destroy(TVlog $song)
     {
         $song->delete();
 
-        return redirect()->route('admin.songs.index')
-            ->with('success', 'Song deleted successfully!');
+        return redirect()->route('admin.t_vlogs.index')
+            ->with('success', 'TVlog deleted successfully!');
     }
 
     public function reorder(Request $request)
     {
         $request->validate([
-            'songs' => 'required|array',
-            'songs.*.id' => 'required|exists:songs,id',
-            'songs.*.order' => 'required|integer|min:0',
+            't_vlogs' => 'required|array',
+            't_vlogs.*.id' => 'required|exists:t_vlogs,id',
+            't_vlogs.*.order' => 'required|integer|min:0',
         ]);
 
-        foreach ($request->songs as $songData) {
-            Song::where('id', $songData['id'])->update(['order' => $songData['order']]);
+        foreach ($request->t_vlogs as $songData) {
+            TVlog::where('id', $songData['id'])->update(['order' => $songData['order']]);
         }
 
         return response()->json(['success' => true]);
@@ -100,14 +100,14 @@ class SongController extends Controller
         $perPage = 6;
         $offset = ($page - 1) * $perPage;
 
-        $songs = Song::activeOrdered()
+        $t_vlogs = TVlog::activeOrdered()
             ->skip($offset)
             ->take($perPage)
             ->get();
 
         return response()->json([
-            'songs' => $songs,
-            'hasMore' => $songs->count() === $perPage,
+            't_vlogs' => $t_vlogs,
+            'hasMore' => $t_vlogs->count() === $perPage,
             'nextPage' => $page + 1
         ]);
     }

@@ -5,17 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Song extends Model
+class News extends Model
 {
-    use HasFactory;
+      use HasFactory;
     public $timestamps = false;
     protected $fillable = [
-        'youtube_url',
+        'image',
         'order',
     ];
 
     protected $casts = [
-        'order' => 'integer',
+        'order' => 'integer'
     ];
 
     public function scopeOrdered($query)

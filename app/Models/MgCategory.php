@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class MgCategory extends Model
 {
     protected $fillable = ['name'];
-        public $timestamps = false;
+    public $timestamps = false;
 }

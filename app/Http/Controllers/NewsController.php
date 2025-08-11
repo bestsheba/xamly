@@ -7,17 +7,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 
-class ImageController extends Controller
+class NewsController extends Controller
 {
     public function index()
     {
-        $images = News::ordered()->paginate(12);
-        return view('admin.images.index', compact('images'));
+        $news = News::ordered()->paginate(12);
+        return view('admin.news.index', compact('news'));
     }
 
     public function create()
     {
-        return view('admin.images.create');
+        return view('admin.news.create');
     }
 
     public function store(Request $request)
@@ -32,19 +32,19 @@ class ImageController extends Controller
         }
 
         $imageFile = $request->file('image');
-        $imagePath = $imageFile->store('images', 'public');
+        $imagePath = $imageFile->store('news', 'public');
 
         News::create([
             'image' => $imagePath,
             'order' => $request->order ?? 0,
         ]);
 
-        return redirect()->route('admin.images.index')->with('success', 'News uploaded successfully!');
+        return redirect()->route('admin.news.index')->with('success', 'News uploaded successfully!');
     }
 
     public function edit(News $image)
     {
-        return view('admin.images.edit', compact('image'));
+        return view('admin.news.edit', compact('image'));
     }
 
     public function update(Request $request, News $image)
@@ -67,14 +67,14 @@ class ImageController extends Controller
             if ($image->image && Storage::disk('public')->exists($image->image)) {
                 Storage::disk('public')->delete($image->image);
             }
-            
+
             $imageFile = $request->file('image');
-            $data['image'] = $imageFile->store('images', 'public');
+            $data['image'] = $imageFile->store('news', 'public');
         }
 
         $image->update($data);
 
-        return redirect()->route('admin.images.index')->with('success', 'News updated successfully!');
+        return redirect()->route('admin.news.index')->with('success', 'News updated successfully!');
     }
 
     public function destroy(News $image)
@@ -82,10 +82,10 @@ class ImageController extends Controller
         if ($image->image_path && Storage::disk('public')->exists($image->image_path)) {
             Storage::disk('public')->delete($image->image_path);
         }
-        
+
         $image->delete();
 
-        return redirect()->route('admin.images.index')->with('success', 'News deleted successfully!');
+        return redirect()->route('admin.news.index')->with('success', 'News deleted successfully!');
     }
 
     // API endpoint for load more functionality
@@ -94,16 +94,16 @@ class ImageController extends Controller
         $page = $request->get('page', 1);
         $perPage = 2;
 
-        $images = News::ordered()
+        $news = News::ordered()
             ->paginate($perPage, ['*'], 'page', $page);
         if ($request->ajax()) {
             return response()->json([
-                'images' => $images->items(),
-                'hasMorePages' => $images->hasMorePages(),
-                'nextPage' => $images->currentPage() + 1
+                'news' => $news->items(),
+                'hasMorePages' => $news->hasMorePages(),
+                'nextPage' => $news->currentPage() + 1
             ]);
         }
 
-        return view('partials.image-grid', compact('images'));
+        return view('partials.image-grid', compact('news'));
     }
-} 
+}

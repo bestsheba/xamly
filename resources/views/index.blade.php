@@ -263,7 +263,7 @@
     <!-- Hero Section -->
     <section id="home"
         class="min-h-screen flex items-center justify-center bg-gradient-to-br from-bangladesh-green/10 to-golden/20 pt-20">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="text-center lg:text-left">
                     <h1 class="text-4xl md:text-6xl font-bold text-bangladesh-green mb-4">
@@ -300,7 +300,7 @@
     </section>
     <!-- About Me Section -->
     <section id="about" class="py-10 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <img src="images/about1.JPG" alt="Robiul Alam Rakib in studio" class="rounded-lg shadow-xl" />
@@ -440,67 +440,56 @@
         </div>
     </section>
     <!-- Ghurbaz Travel Vlog Section -->
-    <section id="ghurbaz" class="py-10 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-4xl font-bold text-bangladesh-green mb-4">
-                    Ghurbaz - Travel Vlogs
-                </h2>
-                <p class="text-xl text-gray-600">
-                    Join me on incredible journeys around the world
-                </p>
+    <section id="travelVlogs" class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
+                Travel Vlogs
+            </h2>
+
+            <!-- Dynamic Video Grid -->
+            <div id="vlogs-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                @forelse($t_vlogs as $vlog)
+                    @php
+                        // Extract video ID from YouTube link
+                        preg_match(
+                            '/(?:youtube\\.com\\/(?:[^\\/]+\\/\\S+\\/|(?:v|e(?:mbed)?)\\/|.*[?&]v=)|youtu\\.be\\/)([a-zA-Z0-9_-]{11})/',
+                            $vlog->youtube_url,
+                            $matches,
+                        );
+                        $videoId = $matches[1] ?? null;
+                    @endphp
+
+                    @if ($videoId)
+                        <div class="gallery-item bg-white rounded-lg shadow-lg overflow-hidden"
+                            data-video-id="{{ $videoId }}">
+                            <div class="aspect-video bg-gray-200 relative">
+                                <iframe class="w-full h-full absolute inset-0"
+                                    src="https://www.youtube.com/embed/{{ $videoId }}"
+                                    title="YouTube video player" frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    @endif
+                @empty
+                    <div class="col-span-full text-center text-gray-500 py-8">
+                        No songs available at the moment.
+                    </div>
+                @endforelse
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Vlog 1 -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div
-                        class="aspect-video bg-gradient-to-br from-golden/20 to-golden/40 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-6xl text-golden"></i>
-                    </div>
+            <!-- Load More Button -->
+            @if ($t_vlogs->count() >= 6)
+                <div class="text-center mt-8">
+                    <button id="load-more-btn"
+                        class="bg-bangladesh-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                        data-page="2">
+                        Load More
+                    </button>
                 </div>
-
-                <!-- Vlog 2 -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div
-                        class="aspect-video bg-gradient-to-br from-deep-blue/20 to-deep-blue/40 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-6xl text-deep-blue"></i>
-                    </div>
-                </div>
-
-                <!-- Vlog 3 -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div
-                        class="aspect-video bg-gradient-to-br from-bangladesh-green/20 to-bangladesh-green/40 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-6xl text-bangladesh-green"></i>
-                    </div>
-                </div>
-
-                <!-- Add more vlogs -->
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div
-                        class="aspect-video bg-gradient-to-br from-bangladesh-red/20 to-bangladesh-red/40 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-6xl text-bangladesh-red"></i>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div
-                        class="aspect-video bg-gradient-to-br from-purple-400/20 to-purple-600/40 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-6xl text-purple-600"></i>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <div
-                        class="aspect-video bg-gradient-to-br from-green-400/20 to-green-600/40 flex items-center justify-center">
-                        <i class="fas fa-play-circle text-6xl text-green-600"></i>
-                    </div>
-                </div>
-            </div>
+            @endif
         </div>
     </section>
-
     <section id="travel" class="py-10 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
@@ -536,7 +525,7 @@
     </section>
 
     <section id="news" class="py-10 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">News & Press</h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -567,85 +556,70 @@
             </div>
         </div>
     </section>
+    <section id="news" class="py-10 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
+                News & Press
+            </h2>
+            <!-- Dynamic Images Grid -->
+            <div id="news-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                @forelse($news as $new)
+                    <div class="gallery-item aspect-square bg-white rounded-lg shadow-lg overflow-hidden"
+                        data-country="{{ $new->country }}">
+                        <img src="{{ Storage::url($new->image) }}" alt="{{ $new->alt ?? 'News Photo' }}"
+                            class="w-full h-full object-cover rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer gallery-trigger" />
+                    </div>
+                @empty
+                    <div class="col-span-full text-center text-gray-500 py-8">
+                        No news photos available at the moment.
+                    </div>
+                @endforelse
+            </div>
+
+            <!-- Load More Button -->
+            @if ($images->count() >= 8)
+                <div class="text-center mt-8">
+                    <button id="load-more-btn"
+                        class="bg-bangladesh-green hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                        data-page="2">
+                        Load More
+                    </button>
+                </div>
+            @endif
+        </div>
+    </section>
     <section id="blog" class="py-10 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">Blog</h2>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="images/2.JPG" alt="Music Journey" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">January 15, 2024</div>
-                        <h3 class="text-xl font-bold text-bangladesh-green mb-3">My Musical Journey: From Dreams to
-                            Reality</h3>
-                        <p class="text-gray-600 mb-4">Reflecting on the path that led me to become a professional
-                            musician and the lessons learned along the way...</p>
-                        <a href="#" class="text-bangladesh-green hover:underline">Read More →</a>
-                    </div>
-                </article>
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="images/3.JPG" alt="Travel Tips" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">December 20, 2023</div>
-                        <h3 class="text-xl font-bold text-bangladesh-green mb-3">Travel Tips for First-Time
-                            International Travelers</h3>
-                        <p class="text-gray-600 mb-4">Essential advice for Bangladeshi travelers planning their first
-                            international trip...</p>
-                        <a href="#" class="text-bangladesh-green hover:underline">Read More →</a>
-                    </div>
-                </article>
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="images/4.JPG" alt="Music Production" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">November 10, 2023</div>
-                        <h3 class="text-xl font-bold text-bangladesh-green mb-3">Behind the Scenes: Music Production at
-                            BD SoundLab</h3>
-                        <p class="text-gray-600 mb-4">A glimpse into the creative process and technology behind our
-                            music production...</p>
-                        <a href="#" class="text-bangladesh-green hover:underline">Read More →</a>
-                    </div>
-                </article>
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="images/5.JPG" alt="Cultural Exchange" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">October 5, 2023</div>
-                        <h3 class="text-xl font-bold text-bangladesh-green mb-3">Music as a Bridge: Cultural Exchange
-                            Through Art</h3>
-                        <p class="text-gray-600 mb-4">How music helps connect different cultures and creates
-                            understanding...</p>
-                        <a href="#" class="text-bangladesh-green hover:underline">Read More →</a>
-                    </div>
-                </article>
 
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="images/6.JPG" alt="Travel Photography" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">September 18, 2023</div>
-                        <h3 class="text-xl font-bold text-bangladesh-green mb-3">Capturing Memories: Travel Photography
-                            Tips</h3>
-                        <p class="text-gray-600 mb-4">How to take stunning photos during your travels and preserve
-                            memories...</p>
-                        <a href="#" class="text-bangladesh-green hover:underline">Read More →</a>
-                    </div>
-                </article>
+                @foreach ($articles as $article)
+                    <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                        @if ($article->image)
+                            <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}"
+                                class="w-full h-48 object-cover">
+                        @else
+                            <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+                                <span class="text-gray-500">No Image</span>
+                            </div>
+                        @endif
 
-                <article class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="images/7.JPG" alt="Business Journey" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <div class="text-sm text-gray-500 mb-2">August 25, 2023</div>
-                        <h3 class="text-xl font-bold text-bangladesh-green mb-3">Building BD HOLIDAYS: From Passion to
-                            Business</h3>
-                        <p class="text-gray-600 mb-4">The story behind starting BD HOLIDAYS and turning travel passion
-                            into business...</p>
-                        <a href="#" class="text-bangladesh-green hover:underline">Read More →</a>
-                    </div>
-                </article>
+                        <div class="p-6">
+                            <div class="text-sm text-gray-500 mb-2">{{ $article->formatted_date }}</div>
+                            <h3 class="text-xl font-bold text-bangladesh-green mb-3">{{ $article->title }}</h3>
+                            <p class="text-gray-600 mb-4">{{ $article->excerpt }}</p>
+                            <a href="{{ route('articles.show', $article) }}"
+                                class="text-bangladesh-green hover:underline">Read More →</a>
+                        </div>
+                    </article>
+                @endforeach
             </div>
         </div>
     </section>
     <!-- Contact Section -->
     <section id="contact" class="py-10 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-4xl font-bold text-center text-bangladesh-green mb-12">
                 Get In Touch
             </h2>
@@ -743,7 +717,7 @@
 
     <!-- Footer -->
     <footer class="bg-bangladesh-green text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- About Column -->
                 <div>

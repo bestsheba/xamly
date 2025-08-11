@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('songs', function (Blueprint $table) {
+        Schema::create('t_vlogs', function (Blueprint $table) {
             $table->id();
             $table->integer('order')->default(0);
             $table->string('youtube_url')->unique();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('songs');
+        Schema::dropIfExists('t_vlogs');
     }
 };
